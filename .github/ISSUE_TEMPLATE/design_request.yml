@@ -1,0 +1,87 @@
+name: Design request
+description: Request UI/UX exploration, specs, or handoff artifacts.
+title: "[Design]: "
+labels:
+  - design
+  - ux
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template when design work needs dedicated discovery, mockups, or handoff.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem statement
+      description: What user problem are we solving?
+      placeholder: New users struggle to discover ...
+    validations:
+      required: true
+  - type: input
+    id: audience
+    attributes:
+      label: Target users/audience
+      description: Persona, user segment, or internal role.
+      placeholder: First-time shoppers, support admins, etc.
+    validations:
+      required: true
+  - type: textarea
+    id: goals
+    attributes:
+      label: Goals and success criteria
+      description: What outcome should the design achieve?
+      placeholder: |
+        - Reduce checkout drop-off
+        - Improve task completion rate
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Screen/flow scope
+      description: Pages, components, and flows included.
+      placeholder: |
+        In scope:
+        - Checkout address step
+        - Payment selection
+        Out of scope:
+        - Account settings
+    validations:
+      required: true
+  - type: textarea
+    id: references
+    attributes:
+      label: References and links
+      description: Figma, wireframes, competitor examples, analytics, and user research.
+      placeholder: Figma link..., screenshot..., dashboard link...
+    validations:
+      required: false
+  - type: textarea
+    id: constraints
+    attributes:
+      label: Constraints
+      description: Brand, accessibility, technical, responsive, legal, or content constraints.
+      placeholder: Must meet WCAG 2.1 AA and support mobile first.
+    validations:
+      required: true
+  - type: textarea
+    id: handoff
+    attributes:
+      label: Handoff expectations
+      description: What should be delivered?
+      placeholder: |
+        - [ ] Final Figma screens
+        - [ ] Component states
+        - [ ] Interaction notes
+        - [ ] Dev handoff walkthrough
+    validations:
+      required: true
+  - type: checkboxes
+    id: readiness
+    attributes:
+      label: Readiness checks
+      options:
+        - label: I included relevant context and links for design work.
+          required: true
+        - label: I clarified success criteria for this request.
+          required: true

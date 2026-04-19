@@ -1,0 +1,48 @@
+name: Feature request
+description: Propose an improvement or new capability.
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Share the problem first, then the solution you want. This helps us prioritize effectively.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem statement
+      description: What user or business problem are we trying to solve?
+      placeholder: Users cannot easily filter results by ...
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Describe your preferred approach.
+      placeholder: Add a filter panel with ...
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: List any other solutions or workarounds you considered.
+      placeholder: We also considered ...
+    validations:
+      required: false
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Links, screenshots, mockups, or references.
+    validations:
+      required: false
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Verification
+      options:
+        - label: I searched existing issues and did not find a duplicate.
+          required: true

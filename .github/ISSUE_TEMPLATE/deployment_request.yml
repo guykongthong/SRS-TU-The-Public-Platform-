@@ -1,0 +1,105 @@
+name: Deployment request
+description: Plan and track a deployment or infrastructure rollout.
+title: "[Deploy]: "
+labels:
+  - devops
+  - deployment
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template for production/staging deployments, infra changes, or operational rollouts.
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Target environment
+      options:
+        - Production
+        - Staging
+        - Development
+    validations:
+      required: true
+  - type: input
+    id: services
+    attributes:
+      label: Services/components affected
+      description: API, web app, worker, database, infrastructure, etc.
+      placeholder: api-service, web-client, mysql
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: Deployment summary
+      description: What is being deployed and why?
+      placeholder: Deploy release v1.8.2 with checkout bug fix and migration.
+    validations:
+      required: true
+  - type: textarea
+    id: change_scope
+    attributes:
+      label: Scope of change
+      description: Include code changes, migrations, config, and dependencies.
+      placeholder: |
+        - App version bump
+        - DB migration add column ...
+        - ENV update ...
+    validations:
+      required: true
+  - type: input
+    id: window
+    attributes:
+      label: Deployment window
+      description: Planned date/time and timezone.
+      placeholder: 2026-04-21 22:00-23:00 ICT (UTC+7)
+    validations:
+      required: true
+  - type: dropdown
+    id: risk
+    attributes:
+      label: Risk level
+      options:
+        - High
+        - Medium
+        - Low
+    validations:
+      required: true
+  - type: textarea
+    id: rollback
+    attributes:
+      label: Rollback plan
+      description: Exact rollback steps if something fails.
+      placeholder: |
+        1. Revert to previous image tag ...
+        2. Restore config ...
+        3. Validate health checks ...
+    validations:
+      required: true
+  - type: textarea
+    id: validation
+    attributes:
+      label: Post-deploy validation
+      description: Checks to confirm deployment success.
+      placeholder: |
+        - [ ] Health endpoint 200
+        - [ ] Error rate normal
+        - [ ] Key user flow passes
+    validations:
+      required: true
+  - type: textarea
+    id: monitoring
+    attributes:
+      label: Monitoring/alert links
+      description: Dashboards, logs, tracing, and alert channels.
+      placeholder: Grafana ..., Sentry ..., PagerDuty ...
+    validations:
+      required: false
+  - type: checkboxes
+    id: approvals
+    attributes:
+      label: Approvals and readiness
+      options:
+        - label: Change has been reviewed and approved by the responsible engineer.
+          required: true
+        - label: Rollback steps were reviewed and are executable.
+          required: true
