@@ -1,0 +1,44 @@
+name: Chore / Task
+description: Track maintenance, refactoring, docs, or operational work.
+title: "[Chore]: "
+labels:
+  - chore
+body:
+  - type: input
+    id: objective
+    attributes:
+      label: Objective
+      description: One-sentence goal for this task.
+      placeholder: Clean up unused environment variables
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+      description: What is in scope and what is out of scope?
+      placeholder: |
+        In scope:
+        - ...
+        Out of scope:
+        - ...
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: What conditions must be true for this to be done?
+      placeholder: |
+        - [ ] ...
+        - [ ] ...
+    validations:
+      required: true
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies / blockers
+      description: Related issues, PRs, or external blockers.
+      placeholder: Depends on #123
+    validations:
+      required: false
